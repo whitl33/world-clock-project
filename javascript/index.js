@@ -1,7 +1,7 @@
 function updateTime(){
 let sydneyElement = document.querySelector("#sydney");
 if (sydneyElement){
-let sydneyDateElement =  sydneyElement.querySelector(".date");
+let sydneyDateElement = sydneyElement.querySelector(".date");
 let sydneyTimeElement = sydneyElement.querySelector(".time");
 let sydneyTime = moment().tz("Australia/Sydney");
 sydneyDateElement.innerHTML = moment().format("MMMM Do YYYY");
@@ -16,6 +16,16 @@ let bristolTime = moment().tz("Europe/London");
 bristolDateElement.innerHTML = moment().format("MMMM Do YYYY");
 bristolTimeElement.innerHTML = bristolTime.format(" h:mm:ss [<small>]A[</small>]");
 }
+
+let montrealElement = document.querySelector("#montreal");
+if(montrealElement){
+let montrealDateElement = montrealElement.querySelector(".date");
+let montrealTimeElement = montrealElement.querySelector(".time");
+let montrealTime = moment().tz("America/Montreal");
+montrealDateElement.innerHTML = moment().format("MMMM Do YYYY");
+montrealTimeElement.innerHTML = montrealTime.format(" h:mm:ss [<small>]A[</small>]");
+}
+
 }
 
 function updateCity(event){
@@ -35,7 +45,9 @@ function updateCity(event){
                 <div class="time">${cityTime.format("h:mm:ss")}<small>
                 ${cityTime.format("A")}</small>
              </div>
-    </div>`;
+    </div>
+    <a href= "index.html"> All Cities</a>
+    `;
                
 }
 updateTime();
